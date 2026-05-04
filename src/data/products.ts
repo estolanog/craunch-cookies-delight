@@ -2,7 +2,6 @@ import redvelvet from "@/assets/cookie-redvelvet.jpg";
 import duoblack from "@/assets/cookie-duoblack.jpg";
 import nutella from "@/assets/cookie-nutella.jpg";
 import meioamargo from "@/assets/cookie-meioamargo.jpg";
-import pistache from "@/assets/cookie-pistache.jpg";
 import churros from "@/assets/cookie-churros.jpg";
 import ninho from "@/assets/cookie-ninho.jpg";
 import kitkat from "@/assets/cookie-kitkat.jpg";
@@ -26,8 +25,6 @@ export const products: Product[] = [
     description: "Massa clássica de baunilha com chocolate ao leite e recheio de Nutella." },
   { id: "meio-amargo", name: "Chocolate Meio Amargo", price: 12.5, image: meioamargo,
     description: "Massa de cacau com pedaços de chocolate meio amargo." },
-  { id: "pistache", name: "Pistache", price: 15.0, image: pistache,
-    description: "Massa com pistache em grãos, chocolate branco e recheio de creme de pistache." },
   { id: "churros", name: "Churros", price: 13.5, image: churros,
     description: "Massa amanteigada com chocolate branco e canela, com recheio cremoso de doce de leite." },
   { id: "ninho-blueberry", name: "Ninho e Blueberry", price: 13.5, image: ninho,
