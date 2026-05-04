@@ -3,7 +3,6 @@ import { CartProvider, useCart } from "@/context/CartContext";
 import { CartSheet } from "@/components/CartSheet";
 import { products, heroChocolate } from "@/data/products";
 import logo from "@/assets/logo.png";
-import pattern from "@/assets/pattern.png";
 import { Plus, Truck, Instagram, MessageCircle, MapPin } from "lucide-react";
 
 const fmt = (n: number) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
