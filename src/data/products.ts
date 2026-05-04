@@ -26,7 +26,7 @@ export const products: Product[] = [
     description: "Massa clássica de baunilha com chocolate ao leite e recheio de Nutella." },
   { id: "meio-amargo", name: "Chocolate Meio Amargo", price: 12.5, image: meioamargo,
     description: "Massa de cacau com pedaços de chocolate meio amargo." },
-  { id: "pistache", name: "Pistache", price: 15.0, image: pistache, soldOut: true,
+  { id: "pistache", name: "Pistache", price: 15.0, image: pistache,
     description: "Massa com pistache em grãos, chocolate branco e recheio de creme de pistache." },
   { id: "churros", name: "Churros", price: 13.5, image: churros,
     description: "Massa amanteigada com chocolate branco e canela, com recheio cremoso de doce de leite." },

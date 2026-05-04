@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ShoppingBag, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
-const WHATSAPP = "5511999999999"; // placeholder — usuário pode trocar
+const WHATSAPP = "5569921135533"; // Crunch Cookies
 
 export function CartSheet() {
   const { items, count, total, setQty, remove, clear } = useCart();
