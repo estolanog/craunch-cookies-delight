@@ -31,8 +31,12 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-primary text-primary-foreground">
       <div
-        className="absolute inset-0 opacity-15"
-        style={{ backgroundImage: `url(${pattern})`, backgroundSize: "200px" }}
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `radial-gradient(hsl(var(--primary-foreground) / 0.35) 1.5px, transparent 1.5px), radial-gradient(hsl(var(--primary-foreground) / 0.2) 1px, transparent 1px)`,
+          backgroundSize: `28px 28px, 28px 28px`,
+          backgroundPosition: `0 0, 14px 14px`,
+        }}
       />
       <div className="container relative grid gap-10 py-16 md:grid-cols-2 md:py-24 md:items-center">
         <div>
