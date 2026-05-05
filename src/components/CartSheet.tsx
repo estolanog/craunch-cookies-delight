@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ShoppingBag, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const WHATSAPP = "556992113553"; // Crunch Cookies
 
@@ -21,6 +22,23 @@ export function CartSheet() {
 
   const sendWhatsApp = () => {
     if (!items.length) return;
+    if (!name.trim()) return;
+    // Save order to DB then fire webhook
+    (async () => {
+      const orderItems = items.map(i => ({ id: i.product.id, name: i.product.name, price: i.product.price, qty: i.qty }));
+      const { data, error } = await supabase.from("orders").insert({
+        customer_name: name.trim(),
+        address: address.trim() || null,
+        location, payment,
+        items: orderItems,
+        subtotal: total,
+        item_count: items.reduce((s, i) => s + i.qty, 0),
+        whatsapp_sent: true,
+      }).select("id").single();
+      if (!error && data?.id) {
+        supabase.functions.invoke("order-webhook", { body: { order_id: data.id } }).catch(() => {});
+      }
+    })();
     const lines = [
       "*Novo Pedido — Crunch Cookies* 🍪",
       "",
