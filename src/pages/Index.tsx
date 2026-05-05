@@ -4,6 +4,10 @@ import { CartSheet } from "@/components/CartSheet";
 import { products, heroChocolate } from "@/data/products";
 import logo from "@/assets/logo.png";
 import { Plus, Truck, Instagram, MessageCircle, MapPin } from "lucide-react";
+import { useProducts, toDisplayProduct } from "@/hooks/useProducts";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { Link } from "react-router-dom";
 
 const fmt = (n: number) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -101,6 +105,8 @@ function ProductCard({ p }: { p: typeof products[number] }) {
 }
 
 function Catalog() {
+  const { items } = useProducts({ onlyActive: true });
+  const list = items.length ? items.map(toDisplayProduct) : products;
   return (
     <section id="cardapio" className="container py-20">
       <div className="mb-10 text-center">
@@ -108,7 +114,7 @@ function Catalog() {
         <h2 className="font-display text-4xl text-primary sm:text-6xl">SABORES IRRESISTÍVEIS</h2>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {products.map(p => <ProductCard key={p.id} p={p} />)}
+        {list.map(p => <ProductCard key={p.id} p={p} />)}
       </div>
     </section>
   );
