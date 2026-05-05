@@ -5,9 +5,6 @@ import { products, heroChocolate } from "@/data/products";
 import logo from "@/assets/logo.png";
 import { Plus, Truck, Instagram, MessageCircle, MapPin } from "lucide-react";
 import { useProducts, toDisplayProduct } from "@/hooks/useProducts";
-import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { Link } from "react-router-dom";
 
 const fmt = (n: number) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
